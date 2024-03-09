@@ -86,3 +86,62 @@ console.log("lastNameLength: ", lastNameLength);
 // }
 
 // orderDrink(drink);
+
+// TODO: 5 ===================================
+// Напишіть цикл, який пропонує ввести
+// число більше 100 через prompt.
+// Якщо відвідувач ввів інше число - попросити
+// ввести ще раз і так далі.
+// Цикл має питати число, поки відвідувач не
+// введе число більше 100, або натисне кнопку
+// скасування в prompt
+
+// const num = 1000;
+// let count = 0;
+
+// while (num >= count) {
+//   console.log(count);
+//   count++;
+// }
+
+// let num = Number.parseFloat(prompt("write a number"));
+// while (num <= 100) {
+//   num = Number.parseFloat(prompt("write a number"));
+// }
+
+//TODO: 9 ===================================
+//  Виведіть методом console.log() зірочки від 1 до 7 штук у вигляді трикутника таким чино
+// *
+// **
+// ***
+// ****
+// *****
+// let start = "*";
+
+// for (let i = 0; i <= 7; i++) {
+//   console.log(start);
+//   start += "*";
+// }
+
+//TODO: 10 ===================================
+// Знайдіть число 49  у проміжку чисел від 1 до 100 та вийдіть з циклу.
+
+const num1 = 1;
+const num2 = 100;
+
+// for (let i = num1; i <= num2; i++) {
+//   if (i === 49) {
+//     console.log(i);
+//     break;
+//   }
+//   console.log(i);
+// }
+
+// for (let i = num1; i <= num2; i++) {
+//   console.log(i);
+//   if (i !== 49) {
+//     continue;
+//   } else {
+//     console.log(i);
+//   }
+// }
