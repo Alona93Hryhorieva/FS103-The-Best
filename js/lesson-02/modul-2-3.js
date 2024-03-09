@@ -55,3 +55,34 @@ console.log("lastNameLength: ", lastNameLength);
 // } else {
 //     console.log("gorec");
 // }
+
+//TODO: 4 ===================================
+//* Конструкція switch
+// Запитай користувача у модальному вікні, який з напоїв він бажає придбати - "Кава", "Чай" чи "Сік",
+// та залежно від виду напою оголоси суму досплати.Використовувати switch.
+
+// const drink = prompt("What do you want to drink?").toLowerCase();
+
+// function orderDrink(bevarage) {
+//   let price = 0;
+
+//   switch (bevarage) {
+//     case "coffee":
+//       price = 50;
+//       break;
+
+//     case "tea":
+//       price = 30;
+//       break;
+
+//     case "juice":
+//       price = 40;
+//       break;
+
+//     default:
+//       alert("error");
+//   }
+//   alert(` Your order ${price} `);
+// }
+
+// orderDrink(drink);
