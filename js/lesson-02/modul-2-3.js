@@ -145,3 +145,69 @@ const num2 = 100;
 //     console.log(i);
 //   }
 // }
+
+
+//TODO: 11 ===================================
+//Якщо число ділитися на 3 повертати
+// якщо ділитися на 5 повертати
+//Якщо ділитися на 3 і на 5 повернути
+// const numbOne = 45;
+// for (let index = 1; index <= numbOne; index++) {
+//     if (index % 3 === 0 && index % 5 === 0) {
+//         console.log("fizzbuzz");
+//     } else if (index % 3 === 0) {
+//         console.log("fizz");
+//     } else if (index % 5 === 0) {
+//         console.log("buzz");
+//     }
+//     else {
+//         console.log(index);
+//     }
+// }
+
+
+// ! Масиви і функції
+//TODO:=========task-01=================
+// Створіть масив styles з елементами «Джаз» та «Блюз».
+// Додайте "Рок-н-рол" в кінець.
+// Замініть значення "Блюз" на "Класика".
+// Видалить перший елемент масиву і виведіть його в консоль.
+// Вставте «Реп» і «Реггі» на початок масиву.
+// const styles = ["Джаз", "Блюз"];
+// console.log(styles);
+
+// styles.push("Рок-н-рол");
+// console.log(styles);
+
+// styles.unshift("Poк");
+// console.log(styles);
+
+// styles.unshift("Peп");
+// console.log(styles);
+
+// // styles[2] = "Класика";
+// // console.log(styles);
+
+// const index = styles.indexOf("Блюз");
+// styles[index] = "Класика";
+// console.log(styles);
+
+// styles.shift();
+// console.log(styles);
+
+//TODO:=============task-10=================
+// Написати функцію, яка приймає рядок і повертає кількість голосних літер у цьому рядку. `Містить ${count} голосних`
+
+const str = "This is a new line";
+const vowels = ["a", "e", "i", "o", "u"];
+
+function countVowels(str) {
+    let count = 0;
+    for (let index = 0; index < str.length; index++) {
+        if (vowels.includes(str[index])) {
+            count += 1;
+        }  
+    }
+    return `Містить ${count} голосних`;
+}
+console.log(countVowels(str));
