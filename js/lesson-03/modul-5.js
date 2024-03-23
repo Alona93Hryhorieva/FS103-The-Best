@@ -1,7 +1,17 @@
 //! Callback
 //TODO:============task-01=========================
-// Напишіть функцію, яка приймає два числа і колбек-функцію. Функція повинна помножити числа між собою та передати результат дії до колбек-функції. Колбек-функція повинна, у разі, якщо, це число є парним - помножити це число на себе, якщо ні - взяти квадратний корінь з цього числа, та вивести результат у консоль лог.
-
+// Напишіть функцію, яка приймає два числа і колбек-функцію. Функція повинна помножити числа між собою та передати результат дії до колбек-функції.
+// Колбек - функція повинна, у разі, якщо, це число є парним - помножити це число на себе, якщо ні - взяти квадратний корінь з цього числа, та вивести результат у консоль лог.
+// function performOperation(a, b, callback) {
+//   return callback(a * b);
+// }
+// function callbackFunction(number) {
+//   if (number % 2 === 0) {
+//     return Math.pow(number, 2);
+//   } else {
+//     return Math.sqrt(number);
+//   }
+// }
 // const result = performOperation(20, 40, callbackFunction);
 // console.log(result);
 
@@ -12,8 +22,30 @@
 // повертатись перше парне число. При використанні другого - має повертатись перше слово у масиві, що починається з літери
 // "O" у будь - якому реєстрі.
 
-// const numbers = [1, 3, 5, 7, 9, 20];
-// const words = ['apple', 'banana', 'orange', 'pear'];
+// const numbers = [1, 2, 5, 7, 9, 20];
+// const words = ["apple", "banana", "orange", "pear"];
+
+// function findElement(array, callback) {
+//   let result = null;
+//   for (const item of array) {
+//     if (callback(item)) {
+//       result = item;
+//       break;
+//     }
+//   }
+//   return result;
+// }
+
+// function isEven(number) {
+//   return number % 2 === 0;
+// }
+
+// function starWithO(string) {
+//   return string.toLowerCase().startsWith("o");
+// }
+
+// const res1 = findElement(words, starWithO);
+// console.log(res1);
 
 // const res = findElement(numbers, isEven);
 // console.log(res);
@@ -22,7 +54,11 @@
 //TODO:=========task-01=================
 // Дано масив чисел [1, 2, 3, 4, 5]. Створіть новий масив, що містить квадрати кожного елементу вхідного масиву. Очікуваний результат: [1, 4, 9, 16, 25].
 
-// const res = getNewArray([1, 2, 3], 5);
+// const numbers = [1, 2, 3, 4, 5];
+
+// const getNewArray = (array) => array.map((number) => Math.pow(number, 2));
+
+// const res = getNewArray(numbers);
 // console.log(res);
 
 //TODO:=========task-02=================
@@ -34,6 +70,8 @@
 //   { id: 3, values: [7, 8, 9] },
 // ];
 
+// const flatArray = (array) => array.flatMap((item) => item.values);
+
 // const res = flatArray(data);
 // console.log(res);
 
@@ -41,10 +79,12 @@
 // Дано масив об'єктів {name: "John", age: 27}, {name: "Jane", age: 31}, {name: "Bob", age: 19}. Перевірте, чи є хоча б один об'єкт з віком менше 20 років. Очікуваний результат: true.
 
 // const people = [
-//   { name: 'John', age: 27 },
-//   { name: 'Jane', age: 31 },
-//   { name: 'Bob', age: 19 },
+//   { name: "John", age: 27 },
+//   { name: "Jane", age: 31 },
+//   { name: "Bob", age: 19 },
 // ];
+
+// const checkAge = (array) => array.some((item) => item.age < 20);
 
 // const res = checkAge(people);
 // console.log(res);
@@ -53,6 +93,10 @@
 //  Дано масив чисел [2, 4, 6, 8, 10]. Перевірте, чи є кожен елемент масиву парним. Очікуваний результат: true.
 
 // const numbers = [2, 4, 6, 8, 10];
+
+// const checkEvenArray = (array) => {
+//   return array.every((number) => number % 2 === 0);
+// };
 
 // const res = checkEvenArray(numbers);
 // console.log(res);
