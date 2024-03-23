@@ -51,7 +51,23 @@
 
 //TODO:============task-04==============================================
 // 4. Створіть об'єкт "кошик" зі списком товарів та їх цін. Напишіть метод "calculateTotal", який буде обчислювати загальну суму товарів у кошику.
-
+// const cart = {
+//   goods: [],
+//   price: [],
+//   calculateTotal() {
+//     let total = 0;
+//     for (const num of this.price) {
+//       total += num;
+//     }
+//     return `Your total sum ${total}`;
+//   },
+//   addProduct(product, price) {
+//     this.goods.push(product);
+//     this.price.push(price);
+//   },
+// };
+// cart.addProduct("apple", 40);
+// cart.addProduct("banana", 50);
 // console.log(cart.calculateTotal());
 
 //! Перебір об'єктів: for...in і методи Object.keys|values|entries
@@ -61,12 +77,15 @@
 // Є 2 варіанти рішення, спочатку напишемо функцію, потім вирішимо простим способом
 
 // const obj = {
-//   name: 'Igor',
-//   car: 'Mercedes',
-//   carColor: 'black',
+//   name: "Igor",
+//   car: "Mercedes",
+//   carColor: "black",
 // };
-
-// console.log(getBool(obj, 'car')); // true
+// // console.log(Object.entries(obj));
+// function getBool(obj, key) {
+//   return Object.keys(obj).includes(key);
+// }
+// console.log(getBool(obj, "user")); // true
 
 //TODO:============task-06======================================================
 // У нас є об'єкт, у якому зберігатимуться зарплати
@@ -80,8 +99,15 @@
 //   Poly: 160,
 //   Ajax: 1470,
 // };
-
-// console.log(sum);
+// function totalSalary(obj) {
+//   const valuesArray = Object.values(obj);
+//   let total = 0;
+//   for (const num of valuesArray) {
+//     total += num;
+//   }
+//   return total;
+// }
+// console.log(totalSalary(salaries));
 
 //TODO:============task-07======================================================
 // Створіть функцію multiplyNumeric(obj),
@@ -91,9 +117,16 @@
 // let menu = {
 //   width: 200,
 //   height: 300,
-//   title: 'My menu',
+//   title: "My menu",
 // };
-
+// function multiplyNumeric(obj) {
+//   for (const key in obj) {
+//     if (obj.hasOwnProperty(key) && typeof obj[key] === "number") {
+//       obj[key] *= 2;
+//     }
+//   }
+//   return obj;
+// }
 // console.log(multiplyNumeric(menu));
 
 // після виклику функції
@@ -109,10 +142,18 @@
 // Напишіть функцію "findTopStudent", яка буде повертати об'єкт студента з найвищим середнім балом.
 
 // const students = [
-//   { name: 'Андрій', surname: 'Іванов', grade: 4.5 },
-//   { name: 'Олександр', surname: 'Петров', grade: 3.9 },
-//   { name: 'Марія', surname: 'Сидорова', grade: 4.8 },
-//   { name: 'Ірина', surname: 'Федорова', grade: 4.2 },
+//   { name: "Андрій", surname: "Іванов", grade: 4.5 },
+//   { name: "Олександр", surname: "Петров", grade: 3.9 },
+//   { name: "Марія", surname: "Сидорова", grade: 4.8 },
+//   { name: "Ірина", surname: "Федорова", grade: 4.2 },
 // ];
-
+// function findTopStudent(array) {
+//   let topStudent = array[0];
+//   for (const student of array) {
+//     if (topStudent.grade < student.grade) {
+//       topStudent = student;
+//     }
+//   }
+//   return topStudent;
+// }
 // console.log(findTopStudent(students));
