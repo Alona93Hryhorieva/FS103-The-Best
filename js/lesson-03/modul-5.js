@@ -105,14 +105,16 @@
 // Дано масив чисел [1, 2, 3, 4, 5]. Знайдіть перший елемент, більший за 3. Очікуваний результат: 4.
 
 // const numbers = [1, 2, 3, 4, 5];
+// const getNumber = (array) => array.find((number) => number > 3);
 
-// const res = getNumber(arr, 3);
+// const res = getNumber(numbers);
 // console.log(res);
 
 //TODO:=========task-06=================
 // Відсортуйте масив чисел [4, 2, 5, 1, 3] у порядку зростання. Очікуваний результат: [1, 2, 3, 4, 5].
 
 // const numbersArray = [4, 2, 5, 1, 3];
+// const sortedArray = (array) => array.toSorted((a, b) => a - b);
 
 // const res = sortedArray(numbersArray);
 // console.log(res);
@@ -120,7 +122,9 @@
 //TODO:===============task-07===============================
 // Відсортуйте масив рядків ["banana", "orange", "apple", "pear"] у порядку алфавіту. Очікуваний результат: ["apple", "banana", "orange", "pear"].
 
-// const stringArray = ['banana', 'orange', 'apple', 'pear'];
+// const stringArray = ["banana", "orange", "apple", "pear"];
+
+// const sortedArray = (array) => array.toSorted((a, b) => a.localeCompare(b));
 
 // const res = sortedArray(stringArray);
 // console.log(res);
@@ -142,27 +146,32 @@
 //TODO:=========task-09=================
 // Дано масив об'єктів {name: "John", age: 27}, {name: "Jane", age: 31}, {name: "Bob", age: 19}. Створіть новий масив, що містить тільки об'єкти, в яких вік більше 20 років. Очікуваний результат: [{name: "John", age: 27}, {name: "Jane", age: 31}]
 
-// const user = [
-//   { name: 'John', age: 27 },
-//   { name: 'Jane', age: 31 },
-//   { name: 'Bob', age: 19 },
+// const users = [
+// { name: "John", age: 27 },
+// { name: "Jane", age: 31 },
+// { name: "Bob", age: 19 },
 // ];
 
-// const res = getAge(user, 25);
+// const getAge = (array) => array.filter((user) => user.age > 20);
+
+// const res = getAge(users);
 // console.log(res);
 
 //TODO:=========task-10=================
 // Дано масив чисел [1, 2, 3, 4, 5]. Застосуйте метод reduce для обчислення суми елементів масиву
 
-// const numbers = [1, 2, 3, 4, 5];
+//const numbers = [1, 2, 3, 4, 5];
+//const totalSum = (array) => array.reduce((acc, number) => acc + number, 0);
 
-// const res = sum(numbers);
-// console.log(res);
+//const res = totalSum(numbers);
+//console.log(res);
 
 //TODO:=========task-11=================
 // У вас є масив чисел, і вам потрібно знайти середнє значення цих чисел. Напишіть функцію, яка приймає масив чисел і повертає середнє значення.
 
-// const arr = [1, 2, 3, 4, 5];
+//const arr = [1, 2, 3, 4, 5];
+//const averageValue = (array) =>
+// array.reduce((acc, number, _, arr) => acc + number / arr.length, 0);
 
-// const res = averageValue(arr);
-// console.log(res);
+//const res = averageValue(arr);
+//console.log(res);
