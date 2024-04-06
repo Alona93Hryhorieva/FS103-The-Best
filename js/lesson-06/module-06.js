@@ -2,22 +2,22 @@
 //TODO:=========task-01=================
 // Створити об'єкт, який представляє користувача. У об'єкті повинні бути наступні поля: ім'я, прізвище, вік, email та метод, який виводить повну інформацію про користувача.
 const user = {
-    userName: "Alona",
-    lastName: "Hryhorieva",
-    age: 18,
-    email: "userNames@ukr.net",
-    showUser() {
-        console.log(this);
-    },
-    modify(key, value) {
-        if (key !== "userName" && key !== "lastName") {
-            return alert("Key is not valid");
-        }
-        if (value[0] === value[0].toUpperCase() && value.length > 3) {
-            return (this[key] = value);
-        }
-        alert("Value is not valid");
-    },
+  userName: "Alona",
+  lastName: "Hryhorieva",
+  age: 18,
+  email: "userNames@ukr.net",
+  showUser() {
+    console.log(this);
+  },
+  modify(key, value) {
+    if (key !== "userName" && key !== "lastName") {
+      return alert("Key is not valid");
+    }
+    if (value[0] === value[0].toUpperCase() && value.length > 3) {
+      return (this[key] = value);
+    }
+    alert("Value is not valid");
+  },
 };
 // user.modify("userName", "Mukola");
 // user.showUser();
@@ -39,28 +39,28 @@ const user = {
 //TODO:=========task-03=================
 // Створити глобальну функцію для обьекта "user", що може додавати властивості об'єкту, в контексті якого вона буде викликана. Додати цю функцію як метод об'єкта user, та додати за допомогою неї властивість friends із значенням:
 function addProperty(key, value) {
-    this[key] = value;
+  this[key] = value;
 }
 user.addProperty = addProperty;
 user.addProperty("friends", [
-    {
-        firstName: "Mary",
-        lastName: "Smith",
-        age: 32,
-        email: "marysmith@hotmail.com",
-    },
-    {
-        firstName: "Alex",
-        lastName: "Johnson",
-        age: 45,
-        email: "alex.johnson@yahoo.com",
-    },
-    {
-        firstName: "Emily",
-        lastName: "Davis",
-        age: 19,
-        email: "emilydavis@gmail.com",
-    },
+  {
+    firstName: "Mary",
+    lastName: "Smith",
+    age: 32,
+    email: "marysmith@hotmail.com",
+  },
+  {
+    firstName: "Alex",
+    lastName: "Johnson",
+    age: 45,
+    email: "alex.johnson@yahoo.com",
+  },
+  {
+    firstName: "Emily",
+    lastName: "Davis",
+    age: 19,
+    email: "emilydavis@gmail.com",
+  },
 ]);
 user.addProperty("mood", "happy");
 // console.log(user);
@@ -69,10 +69,10 @@ user.addProperty("mood", "happy");
 //  Викликати метод user.showUser() таким чином, щоб він вивів результатом  ({name: 'Bob', lactName: 'Lasso',age: 50, email: 'BodLasso@gmail.com'})
 
 const obj = {
-    userName: "Bob",
-    lastName: "Lasso",
-    age: 50,
-    email: "BodLasso@gmail.com",
+  userName: "Bob",
+  lastName: "Lasso",
+  age: 50,
+  email: "BodLasso@gmail.com",
 };
 
 // user.showUser.call(obj);
@@ -81,7 +81,7 @@ const obj = {
 //  Викличте функцію showFullName у контексті об'єкта user
 
 function showFullName(message, number) {
-    console.log(`${message}, ${this.userName}! Your number is ${number}`);
+  console.log(`${message}, ${this.userName}! Your number is ${number}`);
 }
 // showFullName.call(user, "Hello", 10);
 // showFullName.call(obj,"Bye",0);
@@ -136,6 +136,47 @@ function showFullName(message, number) {
 // ##### Додатково можна створити гетери та сетери для отримання номера столика, статусу замовлення та самого замовлення
 
 // #### Також потрібно створити клас `MenuItem`, який містить властивості `name` та `price` для предметів замовлення.
+
+class Order {
+  #tableNumber;
+  #items;
+  #isPaid;
+  constructor(tableNumber) {
+    this.#tableNumber = tableNumber;
+    this.#items = [];
+    this.#isPaid = false;
+  }
+  calculateTotal() {
+    return this.#items.reduce((acc, item) => (acc += item.price), 0);
+  }
+
+  markAsPaid() {
+    this.#isPaid = true;
+  }
+
+  addItem(item) {
+    this.#items.push(item);
+  }
+
+  removeItem(productName) {
+    this.#items = this.#items.filter((item) => item.name !== productName);
+  }
+  get tableNumber() {
+    return this.#tableNumber;
+  }
+
+  set tableNumber(value) {
+    this.#tableNumber = value;
+  }
+
+  set isPaid(value) {
+    this.#isPaid = value;
+  }
+
+  get isPaid() {
+    return this.#isPaid;
+  }
+}
 
 // Create menu items
 // const item1 = new MenuItem('Burger', 10);
