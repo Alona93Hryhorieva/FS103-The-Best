@@ -6,21 +6,21 @@ const user = {
     lastName: "Hryhorieva",
     age: 18,
     email: "userNames@ukr.net",
-    showUser() { 
+    showUser() {
         console.log(this);
     },
     modify(key, value) {
         if (key !== "userName" && key !== "lastName") {
-           return alert("Key is not valid");
+            return alert("Key is not valid");
         }
         if (value[0] === value[0].toUpperCase() && value.length > 3) {
-         return this[key] = value;
+            return (this[key] = value);
         }
         alert("Value is not valid");
-    }
-}
-user.modify("userName", "Mukola");
-user.showUser();
+    },
+};
+// user.modify("userName", "Mukola");
+// user.showUser();
 //user.showUser();
 
 // user2 = Object.create(user);
@@ -34,69 +34,91 @@ user.showUser();
 //TODO:=========task-02=================
 // Для обьекта "user", написати метод для зміни ім'я або прізвища(змінити можна лише якесь з цих полів, змінювати або додавати нові потрібно заборонити) з перевіркою на валідність даних(Перша літера має бути у верхньому реєстрі, довжина слова не менше 3 літер)
 
-
-
-
-
-
 // user.modify('firstName', 'Vlad');
 
 //TODO:=========task-03=================
 // Створити глобальну функцію для обьекта "user", що може додавати властивості об'єкту, в контексті якого вона буде викликана. Додати цю функцію як метод об'єкта user, та додати за допомогою неї властивість friends із значенням:
-
-// user.addProperty('friends', [
-//   {
-//     firstName: 'Mary',
-//     lastName: 'Smith',
-//     age: 32,
-//     email: 'marysmith@hotmail.com',
-//   },
-//   {
-//     firstName: 'Alex',
-//     lastName: 'Johnson',
-//     age: 45,
-//     email: 'alex.johnson@yahoo.com',
-//   },
-//   {
-//     firstName: 'Emily',
-//     lastName: 'Davis',
-//     age: 19,
-//     email: 'emilydavis@gmail.com',
-//   },
-// ]);
-
+function addProperty(key, value) {
+    this[key] = value;
+}
+user.addProperty = addProperty;
+user.addProperty("friends", [
+    {
+        firstName: "Mary",
+        lastName: "Smith",
+        age: 32,
+        email: "marysmith@hotmail.com",
+    },
+    {
+        firstName: "Alex",
+        lastName: "Johnson",
+        age: 45,
+        email: "alex.johnson@yahoo.com",
+    },
+    {
+        firstName: "Emily",
+        lastName: "Davis",
+        age: 19,
+        email: "emilydavis@gmail.com",
+    },
+]);
+user.addProperty("mood", "happy");
 // console.log(user);
 
 //TODO:=========task-04=================
-//  Викликати метод user.info() таким чином, щоб він вивів результатом  ({name: 'Bob', lactName: 'Lasso',age: 50, email: 'BodLasso@gmail.com'})
+//  Викликати метод user.showUser() таким чином, щоб він вивів результатом  ({name: 'Bob', lactName: 'Lasso',age: 50, email: 'BodLasso@gmail.com'})
 
-// const obj = {
-//   name: 'Bob',
-//   lastName: 'Lasso',
-//   age: 50,
-//   email: 'BodLasso@gmail.com',
-// };
+const obj = {
+    userName: "Bob",
+    lastName: "Lasso",
+    age: 50,
+    email: "BodLasso@gmail.com",
+};
+
+// user.showUser.call(obj);
 
 //TODO:=========task-05=================
 //  Викличте функцію showFullName у контексті об'єкта user
+
+function showFullName(message, number) {
+    console.log(`${message}, ${this.userName}! Your number is ${number}`);
+}
+// showFullName.call(user, "Hello", 10);
+// showFullName.call(obj,"Bye",0);
+
+// showFullName.apply(obj, ["Bye", 0]);
+// showFullName.apply(user, ["Hello", 10]);
 
 //TODO:=========task-06=================
 // Виправте помилки, щоб код працював
 
 // const product = {
-//   price: 5000,
+//     price: 5000,
 
-//   showPrice() {
-//     console.log(this.price);
-//   },
+//     showPrice() {
+//         console.log(this.price);
+//     },
 // };
 
 // function callAction(callback) {
-//   callback();
+//     callback();
 // }
 
-// callAction(product.showPrice);
+// callAction(product.showPrice.bind(product));
 
+// const product = {
+//     price: 5000,
+
+//     showPrice() {
+//         console.log(this.price);
+//     },
+// };
+
+// function callAction(callback, context) {
+//     callback.call(context);
+// }
+
+// callAction(product.showPrice, product);
 //! class
 //TODO:=================task-01=============================
 // Завдання полягає у створенні програми, що дозволяє керувати замовленнями в ресторані.
