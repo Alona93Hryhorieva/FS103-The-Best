@@ -1,9 +1,43 @@
 // ! this
 //TODO:=========task-01=================
 // Створити об'єкт, який представляє користувача. У об'єкті повинні бути наступні поля: ім'я, прізвище, вік, email та метод, який виводить повну інформацію про користувача.
+const user = {
+    userName: "Alona",
+    lastName: "Hryhorieva",
+    age: 18,
+    email: "userNames@ukr.net",
+    showUser() { 
+        console.log(this);
+    },
+    modify(key, value) {
+        if (key !== "userName" && key !== "lastName") {
+           return alert("Key is not valid");
+        }
+        if (value[0] === value[0].toUpperCase() && value.length > 3) {
+         return this[key] = value;
+        }
+        alert("Value is not valid");
+    }
+}
+user.modify("userName", "Mukola");
+user.showUser();
+//user.showUser();
+
+// user2 = Object.create(user);
+//console.log(user2);
+
+//user2.showUser();
+//user2.userName = "Mukola";
+//user2.lastName = "Mosalov";
+//user2.showUser();
 
 //TODO:=========task-02=================
 // Для обьекта "user", написати метод для зміни ім'я або прізвища(змінити можна лише якесь з цих полів, змінювати або додавати нові потрібно заборонити) з перевіркою на валідність даних(Перша літера має бути у верхньому реєстрі, довжина слова не менше 3 літер)
+
+
+
+
+
 
 // user.modify('firstName', 'Vlad');
 
