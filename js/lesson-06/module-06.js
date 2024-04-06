@@ -212,5 +212,5 @@ order1.addItem(item3);
 const total1 = order1.calculateTotal();
 order1.markAsPaid();
 
-console.log(`Order for table ${order1.tableNumber} - Total: $${total1}`);
-console.log(`Is paid: ${order1.isPaid}`);
+// console.log(`Order for table ${order1.tableNumber} - Total: $${total1}`);
+// console.log(`Is paid: ${order1.isPaid}`);
