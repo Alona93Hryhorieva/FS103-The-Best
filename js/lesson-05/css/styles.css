@@ -1,26 +1,58 @@
 .active {
-    color:tomato;
+  color: tomato;
 }
 
-.number-container{
-    display: flex;
-    flex-wrap: wrap;
+.number-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.number{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-weight: 700;
-    margin: 5px;
+.number {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 5px;
 }
-.even{
-    background-color: #8bc34a;
+.even {
+  background-color: #8bc34a;
 }
 
-.odd{
-    background-color: #ffed3b;
+.odd {
+  background-color: #ffed3b;
+}
+
+/* form styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+.contact-form-input {
+  height: 40px;
+  border: 1px solid #cccccc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-form-btn {
+  margin-top: 20px;
+}
+
+.success {
+  outline: 3px solid greenyellow;
+}
+
+.error {
+  outline: 3px solid red;
+}
+
+span {
+  text-decoration: underline;
 }
